@@ -11,11 +11,11 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "mongodb": "^6.0.0"
+    "mongodb": "^6.1.0"
   },
   "devDependencies": {
     "@azure/functions": "^3.0.0",
-    "@types/node": "^20.5.9",
+    "@types/node": "^20.6.2",
     "rimraf": "^5.0.0",
     "typescript": "^5.2.2"
   }
