@@ -83,7 +83,7 @@ resource webSite 'Microsoft.Web/sites@2021-03-01' = {
         }
       ]
       http20Enabled: true
-      linuxFxVersion: 'NODE|18-lts'
+      linuxFxVersion: 'Node|20'
     }
   }
 }
