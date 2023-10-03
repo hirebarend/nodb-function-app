@@ -82,7 +82,7 @@ resource webSite 'Microsoft.Web/sites@2021-03-01' = {
         }
         {
           name: 'WEBSITE_CONTENTSHARE'
-          value: toLower('app-${name}-prod-001')
+          value: toLower('func-${name}-prod-001')
         }
       ]
     }
