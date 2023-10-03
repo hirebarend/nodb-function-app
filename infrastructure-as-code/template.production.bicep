@@ -85,6 +85,7 @@ resource webSite 'Microsoft.Web/sites@2021-03-01' = {
           value: toLower('func-${name}-prod-001')
         }
       ]
+      linuxFxVersion: 'NODE|18'
     }
   }
 }
