@@ -82,9 +82,7 @@ resource webSite 'Microsoft.Web/sites@2021-03-01' = {
           name: 'WEBSITE_CONTENTSHARE'
           value: toLower('app-${name}-prod-001')
         }
-
       ]
-      linuxFxVersion: 'Node|18'
     }
   }
 }
