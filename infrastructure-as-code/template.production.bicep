@@ -39,7 +39,6 @@ resource storageStorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = 
 resource webServerfarm 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: 'asp-${name}-prod'
   location: location
-  kind: 'linux'
   sku: {
     name: 'Y1'
     tier: 'Dynamic'
@@ -50,7 +49,7 @@ resource webServerfarm 'Microsoft.Web/serverfarms@2021-03-01' = {
 resource webSite 'Microsoft.Web/sites@2021-03-01' = {
   name: 'app-${name}-prod-001'
   location: location
-  kind: 'functionapp'
+  kind: 'functionapp,linux'
   identity: {
     type: 'SystemAssigned'
   }
