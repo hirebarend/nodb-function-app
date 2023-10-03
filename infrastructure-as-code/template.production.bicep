@@ -50,7 +50,7 @@ resource webServerfarm 'Microsoft.Web/serverfarms@2021-03-01' = {
 }
 
 resource webSite 'Microsoft.Web/sites@2021-03-01' = {
-  name: 'app-${name}-prod-001'
+  name: 'func-${name}-prod-001'
   location: location
   kind: 'functionapp,linux'
   identity: {
