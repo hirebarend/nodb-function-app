@@ -21,3 +21,10 @@ steps:
       location: "West Europe"
       csmFile: "infrastructure-as-code/template.production.bicep"
       deploymentMode: Complete
+  # - task: AzureFunctionApp@2
+  #   displayName: 'Azure Function App Deploy: func-tryfindme-prod-001'
+  #   inputs:
+  #     connectedServiceNameARM: 'ARM (hirebarend)'
+  #     appType: functionAppLinux
+  #     appName: 'func-nodb-prod-001'
+  #     runtimeStack: 'NODE|18'

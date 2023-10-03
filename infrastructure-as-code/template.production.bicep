@@ -58,18 +58,6 @@ resource webSite 'Microsoft.Web/sites@2021-03-01' = {
     siteConfig: {
       appSettings: [
         {
-          name: 'AzureWebJobsStorage'
-          value: 'DefaultEndpointsProtocol=https;AccountName=${'st${name}prod001'};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageStorageAccount.listKeys().keys[0].value}'
-        }
-        {
-          name: 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'
-          value: 'DefaultEndpointsProtocol=https;AccountName=${'st${name}prod001'};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageStorageAccount.listKeys().keys[0].value}'
-        }
-        {
-          name: 'WEBSITE_CONTENTSHARE'
-          value: toLower('app-${name}-prod-001')
-        }
-        {
           name: 'FUNCTIONS_EXTENSION_VERSION'
           value: '~4'
         }
@@ -81,9 +69,21 @@ resource webSite 'Microsoft.Web/sites@2021-03-01' = {
           name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
           value: insightsComponent.properties.ConnectionString
         }
+        {
+          name: 'AzureWebJobsStorage'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${'st${name}prod001'};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageStorageAccount.listKeys().keys[0].value}'
+        }
+        {
+          name: 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${'st${name}prod001'};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageStorageAccount.listKeys().keys[0].value}'
+        }
+        {
+          name: 'WEBSITE_CONTENTSHARE'
+          value: toLower('app-${name}-prod-001')
+        }
+
       ]
-      http20Enabled: true
-      linuxFxVersion: 'Node|20'
+      linuxFxVersion: 'Node|18'
     }
   }
 }
