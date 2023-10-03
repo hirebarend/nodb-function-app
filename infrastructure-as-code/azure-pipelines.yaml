@@ -1,0 +1,23 @@
+trigger:
+  - main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - task: AzureCLI@2
+    displayName: "Azure CLI"
+    inputs:
+      azureSubscription: "ARM (hirebarend)"
+      scriptType: ps
+      scriptLocation: inlineScript
+      inlineScript: 'az group create -n nodb-function-app -l "West Europe"'
+  - task: AzureResourceManagerTemplateDeployment@3
+    displayName: "ARM Template deployment: Resource Group scope"
+    inputs:
+      azureResourceManagerConnection: "ARM (hirebarend)"
+      subscriptionId: "2427e3e3-f607-4705-8318-55e1e2605405"
+      resourceGroupName: "nodb-function-app"
+      location: "West Europe"
+      csmFile: "infrastructure-as-code/template.production.bicep"
+      deploymentMode: Complete

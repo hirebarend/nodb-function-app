@@ -1,4 +1,3 @@
-import { Context } from "@azure/functions";
 import * as MongoDb from "mongodb";
 
 export type Container = {
@@ -7,7 +6,7 @@ export type Container = {
 
 let container: Container = null;
 
-export async function getContainer(context: Context = null) {
+export async function getContainer() {
   if (container) {
     return container;
   }
