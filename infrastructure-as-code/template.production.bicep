@@ -39,6 +39,7 @@ resource storageStorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = 
 resource webServerfarm 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: 'asp-${name}-prod'
   location: location
+  kind: 'linux'
   sku: {
     name: 'Y1'
     tier: 'Dynamic'
